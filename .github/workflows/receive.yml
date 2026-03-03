@@ -1,0 +1,12 @@
+name: Receive Trigger
+
+on:
+  repository_dispatch:
+    types: [run-pipeline2]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print received variable
+        run: echo "Received variable: ${{ github.event.client_payload.myVar }}"
