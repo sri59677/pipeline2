@@ -9,4 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print received variable
-        run: echo "Received variable: ${{ github.event.client_payload.myVar }}"
+        run: |
+          echo "Received variable: ${{ github.event.client_payload.myVar }}"
